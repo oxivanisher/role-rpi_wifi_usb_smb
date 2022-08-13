@@ -1,0 +1,4 @@
+---
+
+dependencies:
+  - role: rpi_wifi_usb

@@ -1,0 +1,24 @@
+---
+
+- name: install smb server
+  ansible.builtin.package:
+    name: ['samba', 'winbind']
+    state: present
+
+- name: configure smb
+  blockinfile:
+    path: /etc/samba/smb.conf
+    block: |
+      [wifi-usb]
+      browseable = yes
+      path = {{ usb_share_path }}
+      guest ok = yes
+      read only = no
+      create mask = 777
+  notify: smb reloaded
+
+- name: enable and start smb
+  ansible.builtin.systemd:
+    name: smbd.service
+    state: started
+    enabled: yes
