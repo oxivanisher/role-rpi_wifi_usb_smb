@@ -6,7 +6,7 @@
     state: present
 
 - name: configure smb
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: /etc/samba/smb.conf
     block: |
       [wifi-usb]
@@ -21,4 +21,4 @@
   ansible.builtin.systemd:
     name: smbd.service
     state: started
-    enabled: yes
+    enabled: true
