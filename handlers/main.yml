@@ -1,2 +1,6 @@
 ---
-# handlers file for rpi_wifi_usb_smb
+
+- name: smb reloaded
+  ansible.builtin.systemd:
+    name: smbd.service
+    state: reloaded
