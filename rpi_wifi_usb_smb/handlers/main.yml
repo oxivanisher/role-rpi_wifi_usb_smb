@@ -1,6 +1,0 @@
----
-
-- name: smb reloaded
-  ansible.builtin.systemd:
-    name: smbd.service
-    state: reloaded
