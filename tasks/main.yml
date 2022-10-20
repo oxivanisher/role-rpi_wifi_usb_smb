@@ -1,11 +1,11 @@
 ---
 
-- name: install smb server
+- name: Install smb server
   ansible.builtin.package:
     name: ['samba', 'winbind']
     state: present
 
-- name: configure smb
+- name: Configure smb
   ansible.builtin.blockinfile:
     path: /etc/samba/smb.conf
     block: |
@@ -15,9 +15,9 @@
       guest ok = yes
       read only = no
       create mask = 777
-  notify: smb reloaded
+  notify: Smb reloaded
 
-- name: enable and start smb
+- name: Enable and start smb
   ansible.builtin.systemd:
     name: smbd.service
     state: started

@@ -1,7 +1,7 @@
 ---
 
 galaxy_info:
-  role_name: role-rpi_wifi_usb_smb
+  role_name: rpi_wifi_usb_smb
   namespace: oxivanisher
   author: Marc Urben
   description: Please fill me out at some point in time
