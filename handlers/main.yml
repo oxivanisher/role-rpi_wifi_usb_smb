@@ -4,3 +4,5 @@
   ansible.builtin.systemd:
     name: smbd.service
     state: reloaded
+  become: true
+  become_user: root

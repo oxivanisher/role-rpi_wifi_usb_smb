@@ -2,8 +2,12 @@
 
 - name: Install smb server
   ansible.builtin.package:
-    name: ['samba', 'winbind']
+    name:
+      - samba
+      - winbind
     state: present
+  become: true
+  become_user: root
 
 - name: Configure smb
   ansible.builtin.blockinfile:
@@ -16,9 +20,13 @@
       read only = no
       create mask = 777
   notify: Smb reloaded
+  become: true
+  become_user: root
 
 - name: Enable and start smb
   ansible.builtin.systemd:
     name: smbd.service
     state: started
     enabled: true
+  become: true
+  become_user: root
