@@ -1,2 +1,2 @@
 ---
-# defaults file for rpi_wifi_usb_smb
+rpi_wifi_usb_smb_share_path: /mnt/wifi_usb_share

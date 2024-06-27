@@ -1,31 +1,26 @@
-Role Name
-=========
+rpi_wifi_usb_smb
+================
 
-A brief description of the role goes here.
+This role configures a SMB/CIFS share path. It is intended to be used with the [rpi_wifi_usb](https://github.com/oxivanisher/role-rpi_wifi_usb.git) role.
 
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+As always: Use at your own risk!
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| Name                             | Comment                                             | Default value                |
+|----------------------------------|-----------------------------------------------------|------------------------------|
+| rpi_wifi_usb_smb_share_path      | Mount point to be shared via SMB/CIFS               | `/mnt/wifi_usb_share`        |
+| raspberry_pi_boot_dev            | Raspberry pi boot dev (used for editing config.txt) | `/dev/mmcblk0p1`             |
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+- name: Raspberry Pi Wifi USB stick
+  hosts: wifi_usb
+  roles:
+    - role: oxivanisher.raspberry_pi.rpi_wifi_usb_smb                 # configure rpi wifi usb smb share
+```
 
 License
 -------
@@ -35,4 +30,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role is part of the [oxivanisher.raspberry_pi](https://galaxy.ansible.com/ui/repo/published/oxivanisher/raspberry_pi/) collection, and the source for that is located on [github](https://github.com/oxivanisher/collection-raspberry_pi).

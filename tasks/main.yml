@@ -15,7 +15,7 @@
     block: |
       [wifi-usb]
       browseable = yes
-      path = {{ usb_share_path }}
+      path = {{ rpi_wifi_usb_smb_share_path }}
       guest ok = yes
       read only = no
       create mask = 777
