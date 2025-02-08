@@ -1,5 +1,6 @@
 rpi_wifi_usb_smb
 ================
+[![Ansible Lint](https://github.com/oxivanisher/role-rpi_wifi_usb_smb/actions/workflows/ansible-lint.yml/badge.svg)](https://github.com/oxivanisher/role-rpi_wifi_usb_smb/actions/workflows/ansible-lint.yml)
 
 This role configures a SMB/CIFS share path. It is intended to be used with the [rpi_wifi_usb](https://github.com/oxivanisher/role-rpi_wifi_usb.git) role.
 
