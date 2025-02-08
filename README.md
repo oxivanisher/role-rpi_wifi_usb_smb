@@ -11,7 +11,6 @@ Role Variables
 | Name                             | Comment                                             | Default value                |
 |----------------------------------|-----------------------------------------------------|------------------------------|
 | rpi_wifi_usb_smb_share_path      | Mount point to be shared via SMB/CIFS               | `/mnt/wifi_usb_share`        |
-| raspberry_pi_boot_dev            | Raspberry pi boot dev (used for editing config.txt) | `/dev/mmcblk0p1`             |
 
 Example Playbook
 ----------------
